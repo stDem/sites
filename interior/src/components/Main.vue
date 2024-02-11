@@ -8,7 +8,7 @@ export default {};
 
 <style lang="scss" scoped>
 .banner {
-  background: url("/img/banner.png"), lightgray 50% / cover no-repeat;
+  background: url("/src/assets/img/banner.png"), lightgray 50% / cover no-repeat;
   width: 100%;
   height: 30vh;
   background-size: cover;
