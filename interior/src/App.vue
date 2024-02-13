@@ -1,14 +1,17 @@
 <template>
   <Header></Header>
   <Main></Main>
-  <Blog></Blog>
+  <ProjectList></ProjectList>
+  <!-- <Blog></Blog> -->
+
   <Footer></Footer>
 </template>
 
 <script>
-import Blog from "./components/Blog.vue";
+// import Blog from "./components/Blog.vuxe";
 import Footer from "./components/Footer.vue";
 import Header from "./components/Header.vue";
+import ProjectList from "./components/ProjectList.vue";
 import Main from "./components/Main.vue";
 
 export default {
@@ -16,8 +19,9 @@ export default {
   components: {
     Header,
     Main,
-    Blog,
-    Footer
+    // Blog,
+    Footer,
+    ProjectList
 },
 };
 </script>
