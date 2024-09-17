@@ -1,0 +1,35 @@
+.modal{
+    position: fixed;
+    z-index: 10;
+    inset: 0;
+    background-color: rgba(0,0,0, 0.50);
+    cursor: pointer;
+    padding: 30px;
+    overflow-y: auto; // для отдельного скролла
+    display: flex;
+
+    &__main{
+        position: relative;
+        margin: auto;
+        cursor: default;
+    }
+
+    &__close{
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        padding: 0;
+        line-height: 0;
+        outline: 1px solid transparent;
+        border-radius: 3px;
+
+        &:focus-visible{
+            outline-color: gray;
+        }
+    }
+}
+
+
