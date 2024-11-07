@@ -1,0 +1,94 @@
+.hero {
+    padding: 60px 0 50px; // по 100 сверху и снизу: сверху -40 из предыдущего блока, снизу 50 учесть в следующем блоке!
+
+    &__container{
+        position: relative;
+        padding-top: 57px; // отступ от картинки
+        padding-bottom: 57px;
+    }
+
+    &__container:after{ // для размещения картинки
+        content:'';
+        position: absolute;
+        right: -9px; // картинка немного вываливается из контейнера. в макете -39, с учетом padding 30 указываем -9
+        top: 0;
+        bottom: 0;
+        width: 421px;
+        background: url("/img/laptop.png") no-repeat center/contain;
+    }
+
+    &__title{
+        position: relative;
+        z-index: 2;
+        max-width: 780px;
+        font-size: 90px;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+    }
+}
+
+@media(max-width: 1140px){
+    .hero {
+        padding: 40px 0;
+
+        &__container{
+            padding-top: 53px;
+            padding-bottom: 53px;
+        }
+
+        &__container:after{ 
+            width: 340px;
+        }
+
+        &__title{
+            max-width: 580px;
+            font-size: 64px;
+            letter-spacing: 1.28px;
+        }
+    }
+}
+
+@media(max-width: 940px){
+    .hero {
+        padding: 30px 0;
+
+        &__container{
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        &__container:after{ 
+            width: 269px;
+        }
+
+        &__title{
+            max-width: 450px;
+            font-size: 52px;
+            letter-spacing: 1.04px;
+        }
+    }
+}
+
+@media(max-width: 640px){
+    .hero {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        &__container{
+            padding-top: 0;
+            padding-bottom: 262px;
+        }
+
+        &__container:after{ 
+            display: none;
+        }
+
+        &__title{
+            max-width: 290px;
+            font-size: 32px;
+            letter-spacing: 0.64px;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+}

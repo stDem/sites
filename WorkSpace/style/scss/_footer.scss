@@ -1,0 +1,68 @@
+.footer {
+    padding: 50px 0 40px;
+
+    &__container{
+        display: grid;
+        gap: 27px;
+        grid-template-areas: // шаблон для расположения элементов в сетке
+            "logo ." // слева logo, справа пусто
+            "copyright contacts"; // слева copyright, справа contacts
+    }
+
+    &__logo{
+        grid-area: logo; // прописываем название для использования в grid-template-areas в контейнере
+    }
+
+    &__copyright{
+        grid-area: copyright;
+    }
+
+    &__contacts{
+        grid-area: contacts;
+        justify-self: end; // прижимаем контент к концу блока
+        min-width: 180px;
+    }
+
+    &__contact{
+        margin-bottom: 8px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    // &__link{
+
+    // }
+
+}
+
+@media(max-width: 1140px){
+    .footer{
+        padding: 40px 0 32px;
+    }
+}
+
+@media(max-width: 940px){
+    .footer{
+        padding: 30px 0 24px;
+    }
+}
+
+@media(max-width: 640px){
+    .footer{
+        padding-top: 20px;
+
+        &__container{
+            grid-template-areas: 
+            "logo"
+            "copyright"
+            "contacts";
+        }
+
+        &__contacts{
+            justify-self: start;
+        }
+    }
+}
+

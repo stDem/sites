@@ -1,0 +1,111 @@
+$colorTextBase: #171717; // базовый темный цвет шрифта
+$colorBackground: #F3F4F8; // основной цвет фона сайта
+$lineHeightText: 1.2; // по сайту не меняется. пишем в соотношении (не в процентах, так как размер шрифта по макету различается)
+$colorBtns: #A6ADFF;
+$colorTextBlue: #2A18FF;
+$colorTextGray: #CCC;
+$colorBackgroundLight: #FFF;
+$colorBackgroundVacancy: #EAECFF;
+
+@import "fonts";
+@import "header";
+@import "hero";
+@import "vacancies";
+@import "filter";
+@import "choices";
+@import "checkbox";
+@import "cards";
+@import "vacancy";
+@import "footer";
+@import "modal";
+@import "detail";
+
+html{
+    scroll-behavior: smooth;
+    position: relative;
+    box-sizing: border-box; // чтобы указывать отступы без изменения размера объектов внутри
+    background-color: $colorBackground;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit; // наследуем свойства
+}
+
+body{
+    min-width: 320px; // минимальный размер сайта - как в мобильной версии в дизайне
+    min-height: 100vh; // на всю высоту страницы
+    font-family: Inter, sans-serif; // указываем основной и дополнительный шрифты
+    font-size: 14px; // размер шрифта по умоляанию - самый распространенный по дизайн-макету
+    color: $colorTextBase;
+    line-height: $lineHeightText;
+}
+
+img, svg{
+    max-width: 100%; // чтобы картинка не выпадала из блока, в который она вложена
+    // min-height: 100%; // для svg, так как  height: auto не работает для svg
+    height: auto;
+}
+
+button{
+    padding: 0;
+    border: 0;
+    cursor: pointer; // чтобы появлялся курсор при наведении на кнопку
+    background-color: transparent;
+}
+
+a{ // убираем стилизацию ссылок
+    text-decoration: none;
+    color: inherit;
+}
+
+// убираем стилизацию списков, заголовков, параграфов и пр.
+ul{ 
+    padding: 0;
+    margin: 0;
+    list-style-type: none; // убираем точки списков
+}
+
+h1, h2, h3, p{
+    margin: 0;
+}
+
+fieldset{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.visually-hidden{ // делаем заголовок h2 невидимым
+    position: fixed;
+    transform: scale(0);
+}
+
+.container{
+    --width: 1180px; // переменная для обозначения ширины основного контента
+    --padding: 30px;
+    max-width: calc(var(--width) + var(--padding)*2);
+    margin: 0 auto; // равномерно распределяем контент по центру
+    padding: 0 var(--padding); // чтобы всегда был отступ, контент не прижимается при уменьшении экрана
+}
+
+.blue-text {
+    color: $colorTextBlue;
+}
+
+@media(max-width: 1140px){
+    .container{
+        --width: 880px;
+    }
+}
+
+@media(max-width: 940px){
+    .container{
+        --width: 680px;
+    }
+}
+
+@media(max-width: 640px){
+    .container{
+        --padding: 15px;
+    }
+}
